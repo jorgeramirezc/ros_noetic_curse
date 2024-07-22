@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodel_push.a  CMakeFiles/model_push.dir/script/model_push.cc.o
+/usr/bin/ranlib libmodel_push.a

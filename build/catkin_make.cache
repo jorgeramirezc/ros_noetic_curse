@@ -1,0 +1,2 @@
+ackermann_vehicle/ackermann_vehicle:ackermann_vehicle/ackermann_vehicle_description:ackermann_vehicle/ackermann_vehicle_gazebo:ackermann_vehicle/ackermann_vehicle_navigation:beginner_tutorial:my_project_ros:turtlebot3_simulations/turtlebot3_fake:turtlebot3_simulations/turtlebot3_gazebo:turtlebot3_simulations/turtlebot3_simulations
+-DCATKIN_DEVEL_PREFIX=/home/jorge/ros4_ws/devel -DCMAKE_INSTALL_PREFIX=/home/jorge/ros4_ws/install -G Unix Makefiles

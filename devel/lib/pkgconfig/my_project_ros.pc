@@ -1,0 +1,8 @@
+prefix=/home/jorge/ros4_ws/devel
+
+Name: my_project_ros
+Description: Description of my_project_ros
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

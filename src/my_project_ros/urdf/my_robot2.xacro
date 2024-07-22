@@ -1,0 +1,94 @@
+<?xml version='1.0'?>
+
+<robot name="my_robot" 
+xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <link name="robot_footprint"> </link> 
+  <joint name="robot_footprint_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="robot_footprint"/>
+    <child link="chassis" />
+  </joint>
+
+<link name='chassis'>
+          <pose>0 0 .1 0 0 0</pose>
+          <collision name='collision'>
+            <geometry>
+              <box>
+                <size>.4 .2 .1</size>
+              </box>
+            </geometry>
+          </collision>
+
+          <visual name='visual'>
+            <geometry>
+              <box>
+                <size>.4 .2 .1</size>
+              </box>
+            </geometry>
+          </visual>
+          
+    <collision name='back_caster_collision'>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </collision>
+
+    <visual name='back_caster_visual'>
+      <origin xyz="-0.15 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual>
+</link>
+
+<link name="left_wheel">
+        <pose>0.1 0.13 0.1 0 1.5707 1.5707</pose>
+        <collision name="collision">
+          <geometry>
+            <cylinder radius= "0.1" length= "0.05"/>
+          </geometry>
+        </collision>
+
+         <visual name="visual">
+          <geometry>
+            <cylinder radius= "0.1" length= "0.05"/>
+          </geometry>
+        </visual>
+      </link>
+
+<link name="right_wheel">
+        <pose>0.1 -0.13 0.1 0 1.5707 1.5707</pose>
+        <collision name="collision">
+          <geometry>
+            <cylinder radius= "0.1" length= "0.05"/>
+          </geometry>
+        </collision>
+
+         <visual name="visual">
+          <geometry>
+            <cylinder radius= "0.1" length= "0.05"/>
+          </geometry>
+        </visual>
+      </link>
+   
+<joint type="continuous" name="left_wheel_hinge">
+   <origin xyz="0 0 -0.03" rpy="0 0 0"/>
+   <child link="left_wheel"/>
+   <parent link="chassis"/>
+   <axis xyz="0 1 0" rpy="0 0 0"/>
+   <limit effort="10000" velocity="1000"/>
+   <dynamics damping="1.0" friction="1.0"/> 
+</joint>
+ 
+<joint type="continuous" name="right_wheel_hinge">
+   <origin xyz="0 0 0.03" rpy="0 0 0"/>
+   <child link="right_wheel"/>
+   <parent link="chassis"/>
+   <axis xyz="0 1 0" rpy="0 0 0"/>
+   <limit effort="10000" velocity="1000"/>
+   <dynamics damping="1.0" friction="1.0"/> 
+</joint>
+ 
+</robot>
